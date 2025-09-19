@@ -446,7 +446,7 @@ endgame(void)
 	mvwprintw(popupw, 2, 1, "%04d POINTS", points);
 	wrefresh(popupw);
 
-	getch();
+	while (getch() != 'q');
 }
 
 void
