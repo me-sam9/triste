@@ -8,6 +8,8 @@
 #include <time.h>
 #include <unistd.h>
 
+#define SPEED 200000
+
 #define GAME_TPADDING 4
 #define GAME_LPADDING 8
 
@@ -150,7 +152,7 @@ main(void)
 		wprint_game(gamew);
 		wrefresh(gamew);
 
-		usleep(200000);
+		usleep(SPEED);
 
 		int c = getch();
 		if (c == 'q')
