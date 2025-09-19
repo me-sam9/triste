@@ -6,6 +6,7 @@
 BIN = triste
 CC = cc
 LIBS = -lncurses -ltinfo
+DESTDIR = /usr/local/bin/
 
 CFLAGS = -pedantic -Wall -Werror
 LDFLAGS = $(LIBS)
@@ -20,6 +21,12 @@ $(BIN): $(OBJ)
 
 run: all
 	@./$(BIN)
+
+install: all
+	cp $(BIN) $(DESTDIR)
+
+uninstall:
+	rm -f $(DESTDIR)$(BIN)
 
 clean:
 	rm -f $(BIN) $(OBJ)
