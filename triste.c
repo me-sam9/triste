@@ -177,9 +177,8 @@ delete_lines(void)
 		for (int j = 0; j < GAMECOLS; j++) {
 			int *px = &game[GAMEROWS - 1 - i][j];
 
-			if (*px != GROUND && i < GAMEROWS - 1) {
-				j = 0;
-				i++;
+			if (!(*px & GROUND) && i < GAMEROWS - 1) {
+				break;			
 			}
 			else if (*px & GROUND && j == GAMECOLS - 1) {
 				for (int k = i + 1; k < GAMEROWS; k++) {
