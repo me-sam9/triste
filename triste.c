@@ -195,7 +195,6 @@ delete_lines(void)
 				points++;
 			}
 		}
-
 	}
 }
 
